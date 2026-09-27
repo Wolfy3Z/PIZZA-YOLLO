@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PIZZA YOLLO — Carte à emporter</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="entete">
+  <div class="entete-haut">
+    <a href="index.html" class="logo">PIZZA <span>YOLLO</span></a>
+    <a href="index.html" class="logo-lien">
+      <img src="images/logo.png" alt="Logo de PIZZA YOLLO à placer ici" class="logo-image"
+           onerror="this.style.display='none';">
+    </a>
+  </div>
+  <nav class="nav-horizontale">
+    <a href="index.html" class="lien-nav">Accueil</a>
+    <a href="carte.html" class="lien-nav actif">Carte à emporter</a>
+    <a href="contact.html" class="lien-nav">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <div class="separateur"></div>
+      <h2 class="titre-section">Carte à emporter</h2>
+      <p class="soustitre-section">Pizzas, pâtes et salades, prêtes à emporter.</p>
+
+      <!-- PIZZAS : exemples à remplacer par ta vraie carte -->
+      <div class="groupe-plats">
+        <h3>🍕 Pizzas</h3>
+        <p class="note-exemple">Exemples ci-dessous — à remplacer par tes propres pizzas et prix.</p>
+        <ul class="liste-plats">
+          <li class="plat">
+            <span class="plat-nom">Regina
+              <span class="plat-desc">Tomate, mozzarella, jambon, champignons</span>
+            </span>
+            <span class="plat-prix">10,00 €</span>
+          </li>
+          <li class="plat">
+            <span class="plat-nom">4 Fromages
+              <span class="plat-desc">Mozzarella, gorgonzola, chèvre, parmesan</span>
+            </span>
+            <span class="plat-prix">11,50 €</span>
+          </li>
+          <li class="plat">
+            <span class="plat-nom">Yollo Spéciale
+              <span class="plat-desc">Tomate, mozzarella, merguez, poivrons, oignons</span>
+            </span>
+            <span class="plat-prix">12,50 €</span>
+          </li>
+          <li class="plat">
+            <span class="plat-nom">Végétarienne
+              <span class="plat-desc">Tomate, mozzarella, légumes grillés, basilic</span>
+            </span>
+            <span class="plat-prix">11,00 €</span>
+          </li>
+          <li class="plat">
+            <span class="plat-nom">Calzone
+              <span class="plat-desc">Tomate, mozzarella, jambon, œuf, champignons</span>
+            </span>
+            <span class="plat-prix">11,50 €</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- SALADES : exemples à remplacer par la vraie carte -->
+      <div class="groupe-plats groupe-plats--vert">
+        <h3>🥗 Salades</h3>
+        <p class="note-exemple">Exemples ci-dessous — à remplacer par tes propres salades et prix.</p>
+        <ul class="liste-plats">
+          <li class="plat">
+            <span class="plat-nom">Salade César
+              <span class="plat-desc">Salade, poulet, parmesan, croûtons, sauce césar</span>
+            </span>
+            <span class="plat-prix">8,50 €</span>
+          </li>
+          <li class="plat">
+            <span class="plat-nom">Salade italienne
+              <span class="plat-desc">Roquette, tomates séchées, mozzarella, jambon de Parme</span>
+            </span>
+            <span class="plat-prix">9,00 €</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- PÂTES : exemples à remplacer par la vraie carte -->
+      <div class="groupe-plats">
+        <h3>🍝 Pâtes</h3>
+        <p class="note-exemple">Exemples ci-dessous — à remplacer par tes propres pâtes et prix.</p>
+        <ul class="liste-plats">
+          <li class="plat">
+            <span class="plat-nom">Pâtes bolognaise
+              <span class="plat-desc">Sauce tomate, viande hachée mijotée, parmesan</span>
+            </span>
+            <span class="plat-prix">10,50 €</span>
+          </li>
+          <li class="plat">
+            <span class="plat-nom">Pâtes carbonara
+              <span class="plat-desc">Crème, lardons, œuf, parmesan</span>
+            </span>
+            <span class="plat-prix">10,50 €</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dépose le PDF de la carte dans images/carte-pizzas.pdf pour activer ce bouton -->
+      <div class="bloc-pdf">
+        <p>Tu préfères l'avoir sous les yeux hors ligne ?</p>
+        <a href="images/carte-pizzas.pdf" download class="cta cta-contour">Télécharger la carte en PDF</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span class="logo">PIZZA <span style="color: var(--vert);">YOLLO</span></span>
+  À emporter uniquement — voir les <a href="contact.html" style="color: var(--rose);">horaires et coordonnées</a>.
+</footer>
+
+</body>
+</html>

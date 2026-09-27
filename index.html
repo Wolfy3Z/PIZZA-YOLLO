@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PIZZA YOLLO — Accueil</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="entete">
+  <div class="entete-haut">
+    <a href="index.html" class="logo">PIZZA <span>YOLLO</span></a>
+    <a href="index.html" class="logo-lien">
+      <img src="images/logo.png" alt="Logo de PIZZA YOLLO à placer ici" class="logo-image"
+           onerror="this.style.display='none';">
+    </a>
+  </div>
+  <nav class="nav-horizontale">
+    <a href="index.html" class="lien-nav actif">Accueil</a>
+    <a href="carte.html" class="lien-nav">Carte à emporter</a>
+    <a href="contact.html" class="lien-nav">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h1 class="hero-titre">PIZZA<br>YOLLO</h1>
+    <div class="etiquettes-hero">
+      <span class="etiquette">🍕 Pizzas</span>
+      <span class="etiquette">🥗 Salades</span>
+      <span class="etiquette">🍝 Pâtes</span>
+    </div>
+    <div class="boutons-cta">
+      <a href="carte.html" class="cta cta-pleine">Voir la carte</a>
+      <a href="contact.html" class="cta cta-contour">Nous contacter</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="separateur"></div>
+      <h2 class="titre-section">Ça se passe cette semaine</h2>
+      <p class="soustitre-section">Soirées spéciales, cartes du moment : c'est affiché ici dès qu'il y en a une.</p>
+
+      <div class="affiche">
+        <div class="affiche-image cadre-image">
+          <img src="images/evenement.jpg" alt="Affiche de la prochaine soirée événement à placer ici"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="image-manquante">Dépose l'affiche de l'événement ici : images/evenement.jpg</div>
+        </div>
+        <h3>Aucun événement en cours</h3>
+        <p>Revenez bientôt — la prochaine soirée spéciale sera annoncée ici.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="separateur"></div>
+      <h2 class="titre-section">Fidélité</h2>
+      <p class="bandeau-fidelite">🎁 10 pizzas à emporter achetées, la 11ᵉ est offerte.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span class="logo">PIZZA <span style="color: var(--vert);">YOLLO</span></span>
+  Retrouvez-nous aussi sur <a href="carte.html" style="color: var(--rose);">la carte</a> et la page <a href="contact.html" style="color: var(--rose);">contact</a>.
+</footer>
+
+</body>
+</html>

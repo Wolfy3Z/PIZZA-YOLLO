@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Manrope:wght@400;500;700;800&display=swap');
+
+:root {
+  /* Thème clair par défaut */
+  --fond: #ffffff;
+  --fond-carte: #faf9f7;
+  --bordure: #e6e3df;
+  --texte: #16161a;
+  --texte-att: #66646a;
+  --texte-sur-accent: #101012;
+
+  /* Couleurs de marque (identiques dans les deux thèmes) */
+  --rose: #ff3e78;
+  --vert: #8fce55;
+  --vert-texte: #4f8a24;
+
+  --point-couleur: rgba(0, 0, 0, 0.05);
+  --glow-opacity: 0.2;
+
+  --rayon: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fond: #0d0d0f;
+    --fond-carte: #18181b;
+    --bordure: #29292e;
+    --texte: #f4f2ee;
+    --texte-att: #a9a7ad;
+    --texte-sur-accent: #101012;
+
+    --vert-texte: #b6e88a;
+
+    --point-couleur: rgba(255, 255, 255, 0.045);
+    --glow-opacity: 0.3;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background-color: var(--fond);
+  background-image: radial-gradient(circle, var(--point-couleur) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--texte);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  line-height: 1.55;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.separateur {
+  height: 4px;
+  width: 64px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--rose), var(--vert));
+  margin: 0 0 18px;
+}
+
+/* ---------- EN-TÊTE / NAVIGATION ---------- */
+
+.entete {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--fond) 92%, transparent);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--bordure);
+}
+
+.entete-haut {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px 8px;
+  gap: 12px;
+}
+
+.logo {
+  font-family: 'Monoton', cursive;
+  font-size: 1.25rem;
+  color: var(--rose);
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.logo span { color: var(--vert-texte); }
+
+.logo-lien { display: flex; align-items: center; }
+.logo-image { height: 40px; width: auto; }
+
+.nav-horizontale {
+  display: flex;
+  border-top: 1px solid var(--bordure);
+}
+
+.lien-nav {
+  flex: 1;
+  text-align: center;
+  padding: 13px 6px;
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
+  color: var(--texte-att);
+  position: relative;
+  border-left: 1px solid var(--bordure);
+}
+
+.lien-nav:first-child { border-left: none; }
+
+.lien-nav.actif { color: var(--rose); }
+
+.lien-nav.actif::after {
+  content: "";
+  position: absolute;
+  left: 14%;
+  right: 14%;
+  bottom: 0;
+  height: 2px;
+  background: var(--rose);
+}
+
+.lien-nav:hover { color: var(--vert-texte); }
+
+/* ---------- CADRES D'IMAGE (avec repli tant que le fichier n'est pas ajouté) ---------- */
+
+.cadre-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--fond-carte);
+  border: 1px solid var(--bordure);
+}
+
+.cadre-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-manquante {
+  display: none;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 18px;
+  color: var(--texte-att);
+  font-size: 0.85rem;
+}
+
+/* ---------- HÉRO (accueil) ---------- */
+
+.hero {
+  position: relative;
+  padding: 60px 24px 50px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: var(--glow-opacity);
+  z-index: 0;
+}
+
+.hero::before { background: var(--rose); top: -80px; left: -60px; }
+.hero::after { background: var(--vert); bottom: -100px; right: -60px; }
+
+.hero > * { position: relative; z-index: 1; }
+
+.hero-titre {
+  font-family: 'Monoton', cursive;
+  color: var(--rose);
+  font-size: clamp(2.6rem, 9vw, 5rem);
+  line-height: 1.1;
+  margin: 0 0 20px;
+}
+
+.hero-souligne { color: var(--vert-texte); }
+
+.etiquettes-hero {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.etiquette {
+  border: 1px solid var(--bordure);
+  background: var(--fond-carte);
+  border-radius: 30px;
+  padding: 7px 16px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--texte-att);
+}
+
+.boutons-cta {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta {
+  padding: 13px 26px;
+  border-radius: var(--rayon);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+}
+
+.cta-pleine {
+  background: var(--rose);
+  color: var(--texte-sur-accent);
+}
+.cta-pleine:hover { opacity: 0.88; }
+
+.cta-contour {
+  border: 1px solid var(--vert-texte);
+  color: var(--vert-texte);
+}
+.cta-contour:hover { background: rgba(143, 206, 85, 0.1); }
+
+/* ---------- SECTIONS GÉNÉRALES ---------- */
+
+section { padding: 40px 24px; }
+
+.titre-section {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.soustitre-section {
+  color: var(--texte-att);
+  margin: 0 0 28px;
+  max-width: 60ch;
+}
+
+/* ---------- AFFICHE / ÉVÉNEMENT (accueil) ---------- */
+
+.affiche {
+  border: 2px dashed var(--rose);
+  border-radius: 14px;
+  padding: 28px;
+  background: rgba(255, 62, 120, 0.05);
+  text-align: center;
+  position: relative;
+}
+
+.affiche::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 46px;
+  height: 16px;
+  background: var(--vert);
+  border-radius: 2px;
+  opacity: 0.85;
+}
+
+.affiche-image {
+  aspect-ratio: 16 / 9;
+  max-width: 420px;
+  margin: 0 auto 18px;
+  border-radius: 8px;
+}
+
+.affiche h3 {
+  font-size: 1.2rem;
+  margin: 0 0 6px;
+  color: var(--vert-texte);
+}
+
+.affiche p { color: var(--texte-att); margin: 0; }
+
+/* ---------- FIDÉLITÉ (accueil) ---------- */
+
+.bandeau-fidelite {
+  background: rgba(255, 62, 120, 0.08);
+  border: 1px solid var(--rose);
+  border-radius: 10px;
+  padding: 16px 22px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* ---------- CARTE À EMPORTER ---------- */
+
+.groupe-plats {
+  background: var(--fond-carte);
+  border: 1px solid var(--bordure);
+  border-top: 3px solid var(--rose);
+  border-radius: 10px;
+  padding: 22px 22px 8px;
+  margin-bottom: 26px;
+}
+
+.groupe-plats--vert { border-top-color: var(--vert); }
+
+.groupe-plats h3 {
+  margin: 0 0 4px;
+  font-size: 1.15rem;
+}
+
+.note-exemple {
+  font-size: 0.82rem;
+  color: var(--texte-att);
+  font-style: italic;
+  margin: 0 0 14px;
+}
+
+.liste-plats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.plat {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 14px 2px;
+  border-bottom: 1px solid var(--bordure);
+}
+
+.plat:last-child { border-bottom: none; }
+
+.plat-nom { font-weight: 700; }
+.plat-desc { display: block; color: var(--texte-att); font-size: 0.85rem; font-weight: 400; margin-top: 2px; }
+.plat-prix { color: var(--vert-texte); font-weight: 800; white-space: nowrap; }
+
+.bloc-pdf {
+  text-align: center;
+  border: 1px dashed var(--bordure);
+  border-radius: 10px;
+  padding: 26px 20px;
+  margin-top: 44px;
+}
+
+.bloc-pdf p { color: var(--texte-att); margin: 0 0 16px; }
+
+/* ---------- CONTACT ---------- */
+
+.grille-contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 640px) {
+  .grille-contact { grid-template-columns: 1fr; }
+}
+
+.bloc-info {
+  background: var(--fond-carte);
+  border: 1px solid var(--bordure);
+  border-top: 3px solid var(--rose);
+  border-radius: 8px;
+  padding: 26px;
+}
+
+.bloc-info:nth-child(2) { border-top-color: var(--vert); }
+
+.bloc-info h3 {
+  margin: 0 0 14px;
+  color: var(--rose);
+  font-size: 1.05rem;
+}
+
+.bloc-info p { margin: 0 0 6px; }
+
+table.horaires {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 6px;
+}
+
+table.horaires td {
+  padding: 7px 0;
+  border-bottom: 1px solid var(--bordure);
+  font-size: 0.92rem;
+}
+
+table.horaires td:last-child { text-align: right; color: var(--texte-att); }
+table.horaires tr:last-child td { border-bottom: none; }
+
+.rappel-reservation {
+  border-left: 3px solid var(--vert);
+  background: rgba(143, 206, 85, 0.08);
+  padding: 16px 18px;
+  border-radius: 0 6px 6px 0;
+  margin-top: 24px;
+  font-size: 0.92rem;
+}
+
+.rappel-reservation strong { color: var(--vert-texte); }
+
+/* ---------- PIED DE PAGE ---------- */
+
+footer {
+  border-top: 1px solid var(--bordure);
+  padding: 28px 24px;
+  text-align: center;
+  color: var(--texte-att);
+  font-size: 0.82rem;
+}
+
+footer .logo { font-size: 1rem; display: block; margin-bottom: 8px; }
