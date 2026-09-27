@@ -40,6 +40,11 @@
 
 html { scroll-behavior: smooth; }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   margin: 0;
   background-color: var(--fond);
@@ -104,22 +109,21 @@ a { color: inherit; text-decoration: none; }
 
 .nav-horizontale {
   display: flex;
+  flex-wrap: wrap;
   border-top: 1px solid var(--bordure);
 }
 
 .lien-nav {
-  flex: 1;
+  flex: 1 1 25%;
+  min-width: 0;
   text-align: center;
-  padding: 13px 6px;
+  padding: 13px 4px;
   font-weight: 800;
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   letter-spacing: 0.01em;
   color: var(--texte-att);
   position: relative;
-  border-left: 1px solid var(--bordure);
 }
-
-.lien-nav:first-child { border-left: none; }
 
 .lien-nav.actif { color: var(--rose); }
 
@@ -226,6 +230,13 @@ a { color: inherit; text-decoration: none; }
 }
 
 .cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+  max-width: 100%;
+  white-space: normal;
   padding: 13px 26px;
   border-radius: var(--rayon);
   font-weight: 800;
@@ -310,6 +321,7 @@ section { padding: 40px 24px; }
   text-align: center;
   font-weight: 700;
   font-size: 1rem;
+  margin-bottom: 26px;
 }
 
 /* ---------- CARTE À EMPORTER ---------- */
@@ -357,16 +369,17 @@ section { padding: 40px 24px; }
 
 .plat:last-child { border-bottom: none; }
 
-.plat-nom { font-weight: 700; }
-.plat-desc { display: block; color: var(--texte-att); font-size: 0.85rem; font-weight: 400; margin-top: 2px; }
-.plat-prix { color: var(--vert-texte); font-weight: 800; white-space: nowrap; }
+.plat-nom { font-weight: 700; min-width: 0; overflow-wrap: break-word; }
+.plat-desc { display: block; color: var(--texte-att); font-size: 0.85rem; font-weight: 400; margin-top: 2px; overflow-wrap: break-word; }
+.plat-prix { color: var(--vert-texte); font-weight: 800; white-space: nowrap; flex-shrink: 0; }
 
 .bloc-pdf {
   text-align: center;
   border: 1px dashed var(--bordure);
   border-radius: 10px;
-  padding: 26px 20px;
+  padding: 26px 16px;
   margin-top: 44px;
+  overflow: hidden;
 }
 
 .bloc-pdf p { color: var(--texte-att); margin: 0 0 16px; }
